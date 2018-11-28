@@ -1,0 +1,14 @@
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\ValidationTest.deps.json
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\ValidationTest.runtimeconfig.json
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\ValidationTest.runtimeconfig.dev.json
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\ValidationTest.dll
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\bin\Debug\netcoreapp2.1\ValidationTest.pdb
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.csprojAssemblyReference.cache
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.csproj.CoreCompileInputs.cache
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.AssemblyInfoInputs.cache
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.AssemblyInfo.cs
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.dll
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationTest\obj\Debug\netcoreapp2.1\ValidationTest.pdb

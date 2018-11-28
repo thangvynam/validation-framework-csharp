@@ -11,5 +11,9 @@ namespace ValidationFramework
             Char ch = str[0];
             return Char.IsUpper(ch);
         }
+        public static bool IsNotNullOrEmpty(this string str)
+        {
+            return !string.IsNullOrEmpty(str);
+        }
     }
 }

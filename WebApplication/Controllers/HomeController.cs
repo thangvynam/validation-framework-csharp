@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
-
+using ValidationFramework;
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
@@ -14,10 +14,12 @@ namespace WebApplication.Controllers
         {
             return View();
         }
-        public IActionResult Create()
+        public IActionResult Create(Employee employee)
         {
-        
-            return View();
+            if (employee.Name.IsNotNullOrEmpty())
+                return Content(true.ToString(), "text/plain");
+            return Content(false.ToString(), "text/plain");
+
         }
         public IActionResult About()
         {
