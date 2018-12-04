@@ -1,9 +1,9 @@
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\bin\Debug\netcoreapp2.1\ValidationFramework.deps.json
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\bin\Debug\netcoreapp2.1\ValidationFramework.dll
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\bin\Debug\netcoreapp2.1\ValidationFramework.pdb
-C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.csprojAssemblyReference.cache
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.csproj.CoreCompileInputs.cache
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.AssemblyInfoInputs.cache
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.AssemblyInfo.cs
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.dll
 C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.pdb
+C:\Users\ThangVyNam\source\repos\1512341-1512368-1512408\ValidationFramework\obj\Debug\netcoreapp2.1\ValidationFramework.csprojAssemblyReference.cache

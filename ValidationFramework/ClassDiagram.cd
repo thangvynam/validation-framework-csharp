@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ValidationFramework.Validation">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAwAAAAIAIAAAAABAAAQAAAAAAAAgAAA=</HashCode>
+      <FileName>Validation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.ValidatorString">
+    <Position X="5.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAIAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>ValidatorString.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Errors.ValidationError">
+    <Position X="7" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAABAAEAAAAAAIAAAAAA=</HashCode>
+      <FileName>Errors\ValidationError.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Extensions.DetailExtension">
+    <Position X="8.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Extensions\DetailExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Messages.MessageContainer">
+    <Position X="10" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Messages\MessageContainer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationFramework.Messages.MessageFactory">
+    <Position X="10.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Messages\MessageFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

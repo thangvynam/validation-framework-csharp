@@ -6,19 +6,24 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
 using ValidationFramework;
+using System.Reflection;
+
 namespace WebApplication.Controllers
 {
     public class HomeController : Controller
     {
+        Validation validation = Validation.getInstance;
         public IActionResult Index()
         {
             return View();
         }
         public IActionResult Create(Employee employee)
         {
-            if (employee.Name.IsNotNullOrEmpty())
-                return Content(true.ToString(), "text/plain");
-            return Content(false.ToString(), "text/plain");
+            validation.IsNotNullOrEmpty(employee.GetNamePropertyName(),employee.Name);
+            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid());
+
+            return Json(modelResponse);
+            //return Content(validation.IsValid().ToString(), "text/plain");
 
         }
         public IActionResult About()
