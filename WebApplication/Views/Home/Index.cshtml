@@ -158,8 +158,19 @@
                 success: function (resp) {
                     console.log(resp)
                     if (resp.check == false) {
-                        $('#error').html(resp.message);
-                        $(".alert").css("visibility", "visible");
+                        switch (resp.typeNotification) {
+                            case 0:
+                                {
+                                    alert(resp.message);
+                                    break;
+                                }
+                            case 2:
+                                {
+                                    $('#error').html(resp.message);
+                                    $(".alert").css("visibility", "visible");
+                                    break;
+                                }
+                        }
                     } else {
                         $(".alert").css("visibility", "invisible");
                         $('#error').html('');

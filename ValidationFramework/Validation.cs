@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Text;
 using System;
+using ValidationFramework.Interface;
+using ValidationFramework.Show;
+using static ValidationFramework.Show.TypeShow;
+
 namespace ValidationFramework
 {
     public partial class Validation 
@@ -11,6 +15,8 @@ namespace ValidationFramework
 
         private  List<ValidationError> Errors = new List<ValidationError>();
         private  ValidationError LastError = null ;
+
+        private ShowBehavior showBehavior = new TagHTML();
 
 
         private Validation()
@@ -70,6 +76,15 @@ namespace ValidationFramework
             }
             return sb.ToString();
         }
-        
+        public void SetShowBehaivor(ShowBehavior sb)
+        {
+            showBehavior = sb;
+        }
+        public TypeNotification Show()
+        {
+            return showBehavior.Show();
+        }
+
+
     }
 }

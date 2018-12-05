@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using WebApplication.Models;
 using ValidationFramework;
 using System.Reflection;
+using ValidationFramework.Show;
 
 namespace WebApplication.Controllers
 {
@@ -20,7 +21,8 @@ namespace WebApplication.Controllers
         public IActionResult Create(Employee employee)
         {
             validation.IsNotNullOrEmpty(employee.GetNamePropertyName(),employee.Name);
-            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid());
+            validation.SetShowBehaivor(new Alert());
+            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid(),validation.Show());
 
             return Json(modelResponse);
             //return Content(validation.IsValid().ToString(), "text/plain");

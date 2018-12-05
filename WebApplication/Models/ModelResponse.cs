@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using static ValidationFramework.Show.TypeShow;
 
 namespace ValidationFramework
 {
@@ -8,15 +9,16 @@ namespace ValidationFramework
     {
         public string Message { get; set; }
         public bool Check { get; set; }
-
+        public TypeNotification typeNotification { get; set; }
         public ModelResponse()
         {
         }
 
-        public ModelResponse(string message, bool check)
+        public ModelResponse(string message, bool check , TypeNotification typeNotification)
         {
-            Message = message;
-            Check = check;
+            this.Message = message;
+            this.Check = check;
+            this.typeNotification = typeNotification;
         }
     }
 }
