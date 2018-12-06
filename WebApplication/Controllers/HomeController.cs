@@ -20,12 +20,13 @@ namespace WebApplication.Controllers
         }
         public IActionResult Create(Employee employee)
         {
-            validation.IsNotNullOrEmpty(employee.GetNamePropertyName(),employee.Name);
-            validation.SetShowBehaivor(new Alert());
-            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid(),validation.Show());
+            //validation.IsNotNullOrEmpty(employee.GetNamePropertyName(),employee.Name);
+            //validation.SetShowBehaivor(new Alert());
+            //ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid(),validation.Show());
 
-            return Json(modelResponse);
-            //return Content(validation.IsValid().ToString(), "text/plain");
+            //return Json(modelResponse);
+            return Content(true.ToString(), "text/plain");
+           
 
         }
         public IActionResult About()

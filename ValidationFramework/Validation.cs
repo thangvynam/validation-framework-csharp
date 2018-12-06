@@ -5,10 +5,11 @@ using System;
 using ValidationFramework.Interface;
 using ValidationFramework.Show;
 using static ValidationFramework.Show.TypeShow;
+using ValidationFramework.Decorator;
 
 namespace ValidationFramework
 {
-    public partial class Validation 
+    public class Validation: IValidation
     {
         private static Validation instance = null;
         private static readonly object padlock = new object();
