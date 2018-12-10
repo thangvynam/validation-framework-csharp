@@ -5,13 +5,19 @@ using ValidationFramework.Decorator;
 
 namespace ValidationFramework
 {
-    public abstract class  ValidationDecorator : IValidation
+    public abstract class ValidationDecorator : IValidation
     {
-        private IValidation validation;
+        protected IValidation validation;
+
+        public ValidationDecorator(IValidation validation)
+        {
+            this.validation = validation;
+        }
 
         public bool IsValid()
         {
             return validation.IsValid();
         }
+        public abstract string GetErrors();
     }
 }

@@ -6,6 +6,8 @@ using ValidationFramework.Interface;
 using ValidationFramework.Show;
 using static ValidationFramework.Show.TypeShow;
 using ValidationFramework.Decorator;
+using ValidationFramework.Messages;
+using ValidationFramework.Extensions;
 
 namespace ValidationFramework
 {
@@ -43,9 +45,9 @@ namespace ValidationFramework
                   
             }
         }
-        private Validation AddError(string name,string message)
+        private Validation AddError(string name, string message)
         {
-            ValidationError error = ValidationError.Create(name,message);
+            ValidationError error = new  ValidationError(name, message);
             Errors.Add(error);
             LastError = error;
             return this;
@@ -66,14 +68,19 @@ namespace ValidationFramework
             Errors.Clear();
             LastError = null;
         }
-        public string GetErrors()
+        public string GetErrors(params IValidation[] values)
         {
-            if (Errors.Count == 0)
-                return "";
             StringBuilder sb = new StringBuilder();
-            foreach(ValidationError validationError in Errors)
+            if (Errors.Count != 0)
             {
-                sb.Append(validationError.Message + "\n");
+                foreach (ValidationError validationError in Errors)
+                {
+                    sb.Append(validationError.Message + "\n");
+                }
+            }
+            foreach (ValidationDecorator obj in values)
+            {
+                sb.Append(obj.GetErrors());               
             }
             return sb.ToString();
         }
@@ -86,6 +93,24 @@ namespace ValidationFramework
             return showBehavior.Show();
         }
 
-
+        public Validation IsNotNullOrEmpty(string value)
+        {
+            return IsNotNullOrEmpty("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
+        }
+        public Validation IsNotNullOrEmpty(string name, string value)
+        {
+            return IsNotNullOrEmpty(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name));
+        }
+        public Validation IsNotNullOrEmpty(string name, string value, string message)
+        {
+            if (value.IsNotNullOrEmpty())
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
     }
 }

@@ -8,6 +8,7 @@ using WebApplication.Models;
 using ValidationFramework;
 using System.Reflection;
 using ValidationFramework.Show;
+using ValidationFramework.Decorator;
 
 namespace WebApplication.Controllers
 {
@@ -20,12 +21,14 @@ namespace WebApplication.Controllers
         }
         public IActionResult Create(Employee employee)
         {
-            //validation.IsNotNullOrEmpty(employee.GetNamePropertyName(),employee.Name);
-            //validation.SetShowBehaivor(new Alert());
-            //ModelResponse modelResponse = new ModelResponse(validation.GetErrors(),validation.IsValid(),validation.Show());
+            validation.SetShowBehaivor(new Alert());
+            validation.IsNotNullOrEmpty(employee.GetNamePropertyName(), employee.Name);
 
-            //return Json(modelResponse);
-            return Content(true.ToString(), "text/plain");
+            ValidationString validationString = new ValidationString(validation);
+            validationString.HaveAnyUpperCharacter(employee.GetNamePropertyName(), employee.Name);
+            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(validationString),validation.IsValid(),validation.Show());
+            return Json(modelResponse);
+          
            
 
         }

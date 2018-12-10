@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using ValidationFramework.Show;
 
 namespace ValidationFramework.Decorator
 {
-    interface IValidation
+    public interface IValidation
     {
         bool IsValid();
+        
     }
 }
