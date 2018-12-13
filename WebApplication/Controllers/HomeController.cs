@@ -26,12 +26,16 @@ namespace WebApplication.Controllers
 
             ValidationString validationString = new ValidationString(validation);
             validationString.HaveAnyUpperCharacter(employee.GetNamePropertyName(), employee.Name);
-            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(validationString),validation.IsValid(),validation.Show());
-            return Json(modelResponse);
-          
+            ValidationRegularExpression validationRegularExpression = new ValidationRegularExpression(validation);
+            validationRegularExpression.IsEmail(employee.GetNamePropertyName(), employee.Name);
+            ModelResponse modelResponse = new ModelResponse(validation.GetErrors(validationString, validationRegularExpression),validation.Show());
+
            
 
-        }
+            return Json(modelResponse);
+          
+
+        } 
         public IActionResult About()
         {
             ViewData["Message"] = "Your application description page.";

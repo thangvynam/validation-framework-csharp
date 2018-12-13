@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Text;
 using ValidationFramework.Decorator;
 using ValidationFramework.Errors;
@@ -8,21 +9,16 @@ using ValidationFramework.Messages;
 
 namespace ValidationFramework
 {
+    
     public class ValidationString : ValidationDecorator
     {
         private List<ValidationError> Errors = new List<ValidationError>();
         private ValidationError LastError = null;
-      
 
+        
         public ValidationString( IValidation validation) : base( validation)
         {
         }
-
-        ~ValidationString()
-        {
-
-        }
-
         public new bool IsValid()
         {
             bool check1 = validation.IsValid();
@@ -45,14 +41,15 @@ namespace ValidationFramework
             LastError = error;
             return this;
         }
+
         private ValidationString NoError()
         {
             LastError = null;
             return this;
         }
 
-       
 
+        
         public ValidationString IsNotNullOrEmpty(string value)
         {
             return IsNotNullOrEmpty("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
@@ -104,5 +101,6 @@ namespace ValidationFramework
             }
             return sb.ToString();
         }
+       
     }
 }

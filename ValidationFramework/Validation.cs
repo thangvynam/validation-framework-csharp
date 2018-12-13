@@ -82,6 +82,7 @@ namespace ValidationFramework
             {
                 sb.Append(obj.GetErrors());               
             }
+            ReSet();
             return sb.ToString();
         }
         public void SetShowBehaivor(ShowBehavior sb)
@@ -111,6 +112,10 @@ namespace ValidationFramework
             {
                 return AddError(name, message);
             }
+        }
+        public void ReadProperties(object obj)
+        {
+
         }
     }
 }

@@ -11,6 +11,7 @@
             {
                 IsNotNullMessage = "{0} cannot be null ",
                 HaveAnyUpperCharacter = "{0} have not any upper character",
+                IsEmail="{0} is not email format",
             };
         }
     }

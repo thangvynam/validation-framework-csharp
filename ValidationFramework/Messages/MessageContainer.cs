@@ -4,6 +4,7 @@
     {
         public string IsNotNullMessage { get; set; }
         public string HaveAnyUpperCharacter { get; set; }
+        public string IsEmail { get; set; }
 
     }
 }

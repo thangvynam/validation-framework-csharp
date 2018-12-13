@@ -157,7 +157,7 @@
                 },
                 success: function (resp) {
                     console.log(resp)
-                    if (resp.check == false) {
+                    if (resp.message != "") {
                         switch (resp.typeNotification) {
                             case 0:
                                 {
