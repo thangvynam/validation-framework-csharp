@@ -30,7 +30,7 @@ namespace WebApplication.Controllers
             validationRegularExpression.IsEmail(employee.GetNamePropertyName(), employee.Name);
             ModelResponse modelResponse = new ModelResponse(validation.GetErrors(validationString, validationRegularExpression),validation.Show());
 
-           
+            validation.ReadProperties(employee);
 
             return Json(modelResponse);
           

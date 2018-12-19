@@ -8,6 +8,9 @@ using static ValidationFramework.Show.TypeShow;
 using ValidationFramework.Decorator;
 using ValidationFramework.Messages;
 using ValidationFramework.Extensions;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
+using System.Linq;
 
 namespace ValidationFramework
 {
@@ -115,7 +118,20 @@ namespace ValidationFramework
         }
         public void ReadProperties(object obj)
         {
+            ValidationContext context = new ValidationContext(obj, null, null);
+            List<ValidationResult> results = new List<ValidationResult>();
+            bool valid = Validator.TryValidateObject(obj, context, results, true);
 
+            if (!valid)
+            {
+                foreach (ValidationResult vr in results)
+                {
+                    Console.Write("Member Name :{0}", vr.MemberNames.First());
+                    Console.Write("   ::  {0}{1}", vr.ErrorMessage, Environment.NewLine);
+
+                }
+
+            }
         }
     }
 }

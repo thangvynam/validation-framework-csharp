@@ -47,9 +47,7 @@ namespace ValidationFramework
             LastError = null;
             return this;
         }
-
-
-        
+        #region " Nullable, Empty & Whitespace "
         public ValidationString IsNotNullOrEmpty(string value)
         {
             return IsNotNullOrEmpty("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
@@ -61,6 +59,26 @@ namespace ValidationFramework
         public ValidationString IsNotNullOrEmpty(string name, string value, string message)
         {
             if (value.IsNotNullOrEmpty())
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationString IsNotNullOrWhiteSpace(string value)
+        {
+            return IsNotNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
+        }
+        public ValidationString IsNotNullOrWhiteSpace(string name, string value)
+        {
+            return IsNotNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name));
+        }
+        public ValidationString IsNotNullOrWhiteSpace(string name, string value, string message)
+        {
+            if (value.IsNotNullOrWhiteSpace())
             {
                 return NoError();
             }
@@ -89,6 +107,109 @@ namespace ValidationFramework
                 return AddError(name, message);
             }
         }
+
+        public ValidationString IsNullOrWhiteSpace(string value)
+        {
+            return IsNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
+        }
+        public ValidationString IsNullOrWhiteSpace(string name, string value)
+        {
+            return IsNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name));
+        }
+        public ValidationString IsNullOrWhiteSpace(string name, string value, string message)
+        {
+            if (value.IsNullOrWhiteSpace())
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+        #endregion
+
+        #region " Lengths "
+        public ValidationString IsBetweenLength(string value, int min, int max)
+        {
+            return IsBetweenLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),min,max);
+        }
+        public ValidationString IsBetweenLength(string name, string value, int min, int max)
+        {
+            return IsBetweenLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),min,max);
+        }
+        public ValidationString IsBetweenLength(string name, string value, string message, int min, int max)
+        {
+            if (value.IsBetweenLength(min,max))
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationString IsMaxLength(string value,int max)
+        {
+            return IsMaxLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),max);
+        }
+        public ValidationString IsMaxLength(string name, string value,int max)
+        {
+            return IsMaxLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),max);
+        }
+        public ValidationString IsMaxLength(string name, string value, string message,int max)
+        {
+            if (value.IsMaxLength(max))
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationString IsMinLength(string value,int min)
+        {
+            return IsMinLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),min);
+        }
+        public ValidationString IsMinLength(string name, string value, int min)
+        {
+            return IsMinLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),min);
+        }
+        public ValidationString IsMinLength(string name, string value, string message,int min)
+        {
+            if (value.IsMinLength(min))
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationString IsExactLength(string value, int length)
+        {
+            return IsExactLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""), length);
+        }
+        public ValidationString IsExactLength(string name, string value, int length)
+        {
+            return IsExactLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name), length);
+        }
+        public ValidationString IsExactLength(string name, string value, string message,int length)
+        {
+            if (value.IsExactLength(length))
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+        #endregion
 
         public override string GetErrors()
         {

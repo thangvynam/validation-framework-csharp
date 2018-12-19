@@ -27,6 +27,7 @@ namespace ValidationFramework
             }
             return sb.ToString();
         }
+
         public ValidationRegularExpression IsEmail(string value)
         {
             return IsEmail("", value, string.Format(MessageFactory.Create().IsEmail, ""));
@@ -46,6 +47,29 @@ namespace ValidationFramework
                 return AddError(name, message);
             }
         }
+
+        public ValidationRegularExpression IsPassword(string value)
+        {
+            return IsPassword("", value, string.Format(MessageFactory.Create().IsEmail, ""));
+        }
+        public ValidationRegularExpression IsPassword(string name, string value)
+        {
+            return IsPassword(name, value, string.Format(MessageFactory.Create().IsEmail, name));
+        }
+        public ValidationRegularExpression IsPassword(string name, string value, string message)
+        {
+            if (value.IsPassword())
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+
+
         private ValidationRegularExpression AddError(string name, string message)
         {
             ValidationError error = new ValidationError(name, message);
