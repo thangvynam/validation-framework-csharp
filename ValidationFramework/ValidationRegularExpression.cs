@@ -50,15 +50,55 @@ namespace ValidationFramework
 
         public ValidationRegularExpression IsPassword(string value)
         {
-            return IsPassword("", value, string.Format(MessageFactory.Create().IsEmail, ""));
+            return IsPassword("", value, string.Format(MessageFactory.Create().IsPassword, ""));
         }
         public ValidationRegularExpression IsPassword(string name, string value)
         {
-            return IsPassword(name, value, string.Format(MessageFactory.Create().IsEmail, name));
+            return IsPassword(name, value, string.Format(MessageFactory.Create().IsPassword, name));
         }
         public ValidationRegularExpression IsPassword(string name, string value, string message)
         {
             if (value.IsPassword())
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationRegularExpression IsRegex(string value,string exp)
+        {
+            return IsRegex("", value, string.Format(MessageFactory.Create().IsRegex, ""));
+        }
+        public ValidationRegularExpression IsRegex(string name, string value, string exp)
+        {
+            return IsRegex(name, value, string.Format(MessageFactory.Create().IsRegex, name));
+        }
+        public ValidationRegularExpression IsRegex(string name, string value, string message, string exp)
+        {
+            if (value.IsRegex(exp))
+            {
+                return NoError();
+            }
+            else
+            {
+                return AddError(name, message);
+            }
+        }
+
+        public ValidationRegularExpression IsEqualTo(string value, string compare)
+        {
+            return IsEqualTo("", value, string.Format(MessageFactory.Create().IsEqualTo, ""));
+        }
+        public ValidationRegularExpression IsEqualTo(string name, string value, string compare)
+        {
+            return IsEqualTo(name, value, string.Format(MessageFactory.Create().IsEqualTo, name));
+        }
+        public ValidationRegularExpression IsEqualTo(string name, string value, string message, string compare)
+        {
+            if (value.IsEqualTo(compare))
             {
                 return NoError();
             }

@@ -193,37 +193,37 @@ namespace ValidationFramework.Extensions
         #endregion
         #region " Date Comparisons "
 
-        public static bool IsGreaterThan(this DateTime value, DateTime compare)
+        public static bool DateIsGreaterThan(this DateTime value, DateTime compare)
         {
             return value > compare;
         }
 
-        public static bool IsGreaterThanOrEqualTo(this DateTime value, DateTime compare)
+        public static bool DateIsGreaterThanOrEqualTo(this DateTime value, DateTime compare)
         {
             return value >= compare;
         }
 
-        public static bool IsLessThan(this DateTime value, DateTime compare)
+        public static bool DateIsLessThan(this DateTime value, DateTime compare)
         {
             return value < compare;
         }
 
-        public static bool IsLessThanOrEqualTo(this DateTime value, DateTime compare)
+        public static bool DateIsLessThanOrEqualTo(this DateTime value, DateTime compare)
         {
             return value <= compare;
         }
 
-        public static bool IsEqualTo(this DateTime value, DateTime compare)
+        public static bool DateIsEqualTo(this DateTime value, DateTime compare)
         {
             return value == compare;
         }
 
-        public static bool IsBetweenInclusive(this DateTime value, DateTime from, DateTime to)
+        public static bool DateIsBetweenInclusive(this DateTime value, DateTime from, DateTime to)
         {
             return value >= from && value <= to;
         }
 
-        public static bool IsBetweenExclusive(this DateTime value, DateTime from, DateTime to)
+        public static bool DateIsBetweenExclusive(this DateTime value, DateTime from, DateTime to)
         {
             return value > from && value < to;
         }

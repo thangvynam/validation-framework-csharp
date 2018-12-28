@@ -70,11 +70,11 @@ namespace ValidationFramework
 
         public ValidationString IsNotNullOrWhiteSpace(string value)
         {
-            return IsNotNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
+            return IsNotNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNotNullOrWhiteSpace, ""));
         }
         public ValidationString IsNotNullOrWhiteSpace(string name, string value)
         {
-            return IsNotNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name));
+            return IsNotNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNotNullOrWhiteSpace, name));
         }
         public ValidationString IsNotNullOrWhiteSpace(string name, string value, string message)
         {
@@ -110,11 +110,11 @@ namespace ValidationFramework
 
         public ValidationString IsNullOrWhiteSpace(string value)
         {
-            return IsNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""));
+            return IsNullOrWhiteSpace("", value, string.Format(MessageFactory.Create().IsNullOrWhiteSpace, ""));
         }
         public ValidationString IsNullOrWhiteSpace(string name, string value)
         {
-            return IsNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name));
+            return IsNullOrWhiteSpace(name, value, string.Format(MessageFactory.Create().IsNullOrWhiteSpace, name));
         }
         public ValidationString IsNullOrWhiteSpace(string name, string value, string message)
         {
@@ -132,11 +132,11 @@ namespace ValidationFramework
         #region " Lengths "
         public ValidationString IsBetweenLength(string value, int min, int max)
         {
-            return IsBetweenLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),min,max);
+            return IsBetweenLength("", value, string.Format(MessageFactory.Create().IsBetweenLength, ""),min,max);
         }
         public ValidationString IsBetweenLength(string name, string value, int min, int max)
         {
-            return IsBetweenLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),min,max);
+            return IsBetweenLength(name, value, string.Format(MessageFactory.Create().IsBetweenLength, name),min,max);
         }
         public ValidationString IsBetweenLength(string name, string value, string message, int min, int max)
         {
@@ -152,11 +152,11 @@ namespace ValidationFramework
 
         public ValidationString IsMaxLength(string value,int max)
         {
-            return IsMaxLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),max);
+            return IsMaxLength("", value, string.Format(MessageFactory.Create().IsMaxLength, ""),max);
         }
         public ValidationString IsMaxLength(string name, string value,int max)
         {
-            return IsMaxLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),max);
+            return IsMaxLength(name, value, string.Format(MessageFactory.Create().IsMaxLength, name),max);
         }
         public ValidationString IsMaxLength(string name, string value, string message,int max)
         {
@@ -172,11 +172,11 @@ namespace ValidationFramework
 
         public ValidationString IsMinLength(string value,int min)
         {
-            return IsMinLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""),min);
+            return IsMinLength("", value, string.Format(MessageFactory.Create().IsMinLength, ""),min);
         }
         public ValidationString IsMinLength(string name, string value, int min)
         {
-            return IsMinLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name),min);
+            return IsMinLength(name, value, string.Format(MessageFactory.Create().IsMinLength, name),min);
         }
         public ValidationString IsMinLength(string name, string value, string message,int min)
         {
@@ -192,11 +192,11 @@ namespace ValidationFramework
 
         public ValidationString IsExactLength(string value, int length)
         {
-            return IsExactLength("", value, string.Format(MessageFactory.Create().IsNotNullMessage, ""), length);
+            return IsExactLength("", value, string.Format(MessageFactory.Create().IsExactLength, ""), length);
         }
         public ValidationString IsExactLength(string name, string value, int length)
         {
-            return IsExactLength(name, value, string.Format(MessageFactory.Create().IsNotNullMessage, name), length);
+            return IsExactLength(name, value, string.Format(MessageFactory.Create().IsExactLength, name), length);
         }
         public ValidationString IsExactLength(string name, string value, string message,int length)
         {
